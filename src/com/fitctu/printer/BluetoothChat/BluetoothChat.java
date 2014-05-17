@@ -232,6 +232,8 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
     }
     
     public synchronized void sendMessage(String message) {
+    	Log.w("sendMessage", message);
+    	
         // Check that we're actually connected before trying anything
         if (mChatService.getState() != BluetoothChatService.STATE_CONNECTED) {
             Toast.makeText(this, "未连接设备", Toast.LENGTH_SHORT).show();
@@ -242,7 +244,6 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
         if (message.length() > 0) {
             // Get the message bytes and tell the BluetoothChatService to write
         	message = message+"\r\n";
-        	Log.w("sendMessage", message);
             byte[] send = message.getBytes();
             mChatService.write(send);
         }
@@ -379,6 +380,7 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
                 // construct a string from the valid bytes in the buffer
 //                String readMessage = new String(readBuf, 0, msg.arg1);
 //                handlePrinterReport(readMessage);
+            	Log.w("handleMessage", "MESSAGE_READ: " + (String)msg.obj);
                 handlePrinterReport((String)msg.obj);
                 break;
             case MESSAGE_DEVICE_NAME:
@@ -444,6 +446,9 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
         case R.id.scan:
         	openDeviceListActivity();
             return true;
+        case R.id.manualheat:
+        	openManualHeatDialog();
+        	return true;
         case R.id.opendebug:
         	openDebugDialog();
         	return true;
@@ -463,12 +468,18 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
     	if(id == 1){
     		d = new DebugUtilityDialog(this, this);
     		d.requestWindowFeature(Window.FEATURE_NO_TITLE);
+    	}else if(id==2){
+    		d = new ManualHeatDialog(this, this);
+    		d.requestWindowFeature(Window.FEATURE_NO_TITLE);
     	}
 		return d;
 	}
 
 	private void openDebugDialog() {
 		showDialog(1);
+	}
+	private void openManualHeatDialog() {
+		showDialog(2);
 	}
     
     private void openChooseFileDialog() {

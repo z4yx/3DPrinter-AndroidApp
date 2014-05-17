@@ -20,4 +20,7 @@
     <item android:id="@+id/opendebug"
           android:icon="@android:drawable/ic_menu_mylocation"
           android:title="调试工具" />
+    <item android:id="@+id/manualheat"
+          android:icon="@android:drawable/ic_menu_preferences"
+          android:title="手动加热" />
 </menu>

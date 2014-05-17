@@ -48,7 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="当前状态"
-                	android:textAppearance="?android:attr/textAppearanceLarge"
+                	android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_marginRight="8dp"
                     />
                 
@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="8dp"
                     android:text="挤出器状态"
-                	android:textAppearance="?android:attr/textAppearanceLarge"	 />
+                	android:textAppearance="?android:attr/textAppearanceMedium"	 />
 
                 <RadioButton
                     android:id="@+id/extruder_on"
@@ -87,7 +87,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_marginRight="8dp" />
+                    android:layout_marginRight="5dp" />
 
                 <TextView
                     android:id="@+id/extruder_power"
@@ -108,7 +108,7 @@
                     android:text="加热板状态"
                     android:layout_marginRight="8dp"
                     
-                	android:textAppearance="?android:attr/textAppearanceLarge" />
+                	android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <RadioButton
                     android:id="@+id/heatbed_on"
@@ -123,7 +123,7 @@
                     android:id="@+id/heatbed_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginRight="5dp"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="" />
 
@@ -158,5 +158,12 @@
         </LinearLayout>
 
     </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="© 2014 清华大学基础工业训练中心"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </LinearLayout>

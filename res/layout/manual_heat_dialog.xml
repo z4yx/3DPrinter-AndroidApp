@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp"  >
+        
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:text="挤出器温度"
+                	android:textAppearance="?android:attr/textAppearanceMedium"	 />
+
+                <EditText
+                    android:id="@+id/extruder_settemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:maxEms="3"
+                    android:minEms="3"
+                    android:text="180" >
+
+                    <requestFocus />
+                </EditText>
+
+                <ToggleButton
+                    android:id="@+id/extruder_toggle"
+                    android:layout_marginRight="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开关" />
+                
+    </LinearLayout>
+	<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp"  >
+        
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:text="加热板温度"
+                	android:textAppearance="?android:attr/textAppearanceMedium"	 />
+
+                <EditText
+                    android:id="@+id/heatbed_settemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:maxEms="3"
+                    android:minEms="3"
+                    android:text="80" >
+
+                    <requestFocus />
+                </EditText>
+
+                <ToggleButton
+                    android:id="@+id/heatbed_toggle"
+                    android:layout_marginRight="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开关" />
+                
+    </LinearLayout>
+</LinearLayout>

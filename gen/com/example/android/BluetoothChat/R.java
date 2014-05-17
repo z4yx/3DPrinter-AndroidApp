@@ -37,16 +37,21 @@ public final class R {
         public static final int device_state=0x7f060018;
         public static final int extruder_on=0x7f06001b;
         public static final int extruder_power=0x7f06001d;
+        public static final int extruder_settemp=0x7f060023;
         public static final int extruder_temp=0x7f06001c;
+        public static final int extruder_toggle=0x7f060024;
         public static final int heatbed_on=0x7f06001e;
         public static final int heatbed_power=0x7f060020;
+        public static final int heatbed_settemp=0x7f060025;
         public static final int heatbed_temp=0x7f06001f;
+        public static final int heatbed_toggle=0x7f060026;
         public static final int info_layout=0x7f060019;
+        public static final int manualheat=0x7f060029;
         public static final int new_devices=0x7f060016;
-        public static final int opendebug=0x7f060024;
+        public static final int opendebug=0x7f060028;
         public static final int paired_devices=0x7f060014;
         public static final int printer_state=0x7f06001a;
-        public static final int scan=0x7f060023;
+        public static final int scan=0x7f060027;
         public static final int title_left_text=0x7f060000;
         public static final int title_new_devices=0x7f060015;
         public static final int title_paired_devices=0x7f060013;
@@ -58,7 +63,8 @@ public final class R {
         public static final int device_list=0x7f030002;
         public static final int device_name=0x7f030003;
         public static final int main=0x7f030004;
-        public static final int message=0x7f030005;
+        public static final int manual_heat_dialog=0x7f030005;
+        public static final int message=0x7f030006;
     }
     public static final class menu {
         public static final int option_menu=0x7f050000;
