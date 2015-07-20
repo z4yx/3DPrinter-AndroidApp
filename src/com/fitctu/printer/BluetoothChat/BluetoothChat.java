@@ -142,7 +142,7 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
 
         // If the adapter is null, then Bluetooth is not supported
         if (mBluetoothAdapter == null) {
-            Toast.makeText(this, "À¶ÑÀ²»¿ÉÓÃ", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "è“ç‰™ä¸å¯ç”¨", Toast.LENGTH_LONG).show();
             finish();
             return;
         }
@@ -236,7 +236,7 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
     	
         // Check that we're actually connected before trying anything
         if (mChatService.getState() != BluetoothChatService.STATE_CONNECTED) {
-            Toast.makeText(this, "Î´Á¬½ÓÉè±¸", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "æœªè¿æ¥è®¾å¤‡", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -272,9 +272,9 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
 					if(result.Params!=null && result.Params.length==3){
 						mExtruderState.setChecked(result.Params[2].equals("1"));
 						if(mExtruderState.isChecked()){
-							String temp = (result.Params[0].equals("-1") ? "null" : result.Params[0]+"¡æ");
-							mExtruderTemp.setText("ÎÂ¶È"+temp);
-							mExtruderPower.setText("¹¦ÂÊ"+result.Params[1]+"%");
+							String temp = (result.Params[0].equals("-1") ? "null" : result.Params[0]+"â„ƒ");
+							mExtruderTemp.setText("æ¸©åº¦"+temp);
+							mExtruderPower.setText("åŠŸç‡"+result.Params[1]+"%");
 						}else{
 							mExtruderTemp.setText("");
 							mExtruderPower.setText("");
@@ -285,9 +285,9 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
 					if(result.Params!=null && result.Params.length==3){
 						mHeatbedState.setChecked(result.Params[2].equals("1"));
 						if(mHeatbedState.isChecked()){
-							String temp = (result.Params[0].equals("-1") ? "null" : result.Params[0]+"¡æ");
-							mHeatbedTemp.setText("ÎÂ¶È"+temp);
-							mHeatbedPower.setText("¹¦ÂÊ"+result.Params[1]+"%");
+							String temp = (result.Params[0].equals("-1") ? "null" : result.Params[0]+"â„ƒ");
+							mHeatbedTemp.setText("æ¸©åº¦"+temp);
+							mHeatbedPower.setText("åŠŸç‡"+result.Params[1]+"%");
 						}else{
 							mHeatbedTemp.setText("");
 							mHeatbedPower.setText("");
@@ -299,21 +299,21 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
 						String mode = result.Params[0];
 						if(mode.equals("0")){
 							printerMode = MachMode.StandBy;
-							mPrinterState.setText("¿ÕÏĞ");
+							mPrinterState.setText("ç©ºé—²");
 						}else if(mode.equals("2")){
 							printerMode = MachMode.USBStorage;
-							mPrinterState.setText("USB´æ´¢Ä£Ê½");
+							mPrinterState.setText("USBå­˜å‚¨æ¨¡å¼");
 						}else if(mode.equals("1")){
 							printerMode = MachMode.Printing;
 							
 							String add;
 							if(result.Params[1].equals("1"))
-								add = "(»ØÔ­µã)";
+								add = "(å›åŸç‚¹)";
 							else if(result.Params[1].equals("2"))
-								add = "(µÈ´ı¼ÓÈÈ)";
+								add = "(ç­‰å¾…åŠ çƒ­)";
 							else
 								add = "";
-							mPrinterState.setText("ÕıÔÚ´òÓ¡"+add+"... "+result.Params[2]+"%");
+							mPrinterState.setText("æ­£åœ¨æ‰“å°"+add+"... "+result.Params[2]+"%");
 						}
 						updateButtonState();
 					}
@@ -321,9 +321,9 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
 				case INFO_REPLY:
 					if(result.Params!=null && result.Params.length==1){
 						if(result.Params[0].equals("1"))
-							Toast.makeText(this, "²Ù×÷³É¹¦", Toast.LENGTH_SHORT).show();
+							Toast.makeText(this, "æ“ä½œæˆåŠŸ", Toast.LENGTH_SHORT).show();
 						else
-							Toast.makeText(this, "²Ù×÷Ê§°Ü", Toast.LENGTH_SHORT).show();
+							Toast.makeText(this, "æ“ä½œå¤±è´¥", Toast.LENGTH_SHORT).show();
 					}
 					break;
 				case INFO_LIST_FILES:
@@ -356,16 +356,16 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
                 if(D) Log.i(TAG, "MESSAGE_STATE_CHANGE: " + msg.arg1);
                 switch (msg.arg1) {
                 case BluetoothChatService.STATE_CONNECTED:
-                	mConnectionState.setText("ÒÑÁ¬½Ó: ");
+                	mConnectionState.setText("å·²è¿æ¥: ");
                 	mConnectionState.append(mConnectedDeviceName);
                     mInfoLayout.setVisibility(View.VISIBLE);
                     break;
                 case BluetoothChatService.STATE_CONNECTING:
-                	mConnectionState.setText("Á¬½ÓÖĞ...");
+                	mConnectionState.setText("è¿æ¥ä¸­...");
                     break;
                 case BluetoothChatService.STATE_LISTEN:
                 case BluetoothChatService.STATE_NONE:
-                	mConnectionState.setText("Î´Á¬½ÓÉè±¸");
+                	mConnectionState.setText("æœªè¿æ¥è®¾å¤‡");
                     mInfoLayout.setVisibility(View.INVISIBLE);
                     break;
                 }
@@ -420,7 +420,7 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
             } else {
                 // User did not enable Bluetooth or an error occured
                 Log.d(TAG, "BT not enabled");
-                Toast.makeText(this, "À¶ÑÀÎ´´ò¿ª", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "è“ç‰™æœªæ‰“å¼€", Toast.LENGTH_SHORT).show();
                 finish();
             }
         }
@@ -484,7 +484,7 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
     
     private void openChooseFileDialog() {
     	new AlertDialog.Builder(this)
-		.setTitle("Ñ¡ÔñG´úÂëÎÄ¼ş")
+		.setTitle("é€‰æ‹©Gä»£ç æ–‡ä»¶")
 		.setAdapter(mGCodeAdapter, new DialogInterface.OnClickListener() {
 			
 			@Override
@@ -492,22 +492,22 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
 				sendMessage(buildMessage("START", String.valueOf(arg1)));
 			}
 		})
-		.setNegativeButton("È¡Ïû", null)
+		.setNegativeButton("å–æ¶ˆ", null)
 		.show();
 	}
     
     private void openStopPrintingDialog() {
     	new AlertDialog.Builder(this)
-		.setTitle("ÌáÊ¾")
-		.setMessage("È·ÈÏÍ£Ö¹´òÓ¡Âğ?")
-		.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		.setTitle("æç¤º")
+		.setMessage("ç¡®è®¤åœæ­¢æ‰“å°å—?")
+		.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 			
 			@Override
 			public void onClick(DialogInterface arg0, int arg1) {
 				sendMessage(buildMessage("STOP", ""));
 			}
 		})
-		.setNegativeButton("È¡Ïû", null)
+		.setNegativeButton("å–æ¶ˆ", null)
 		.show();
 	}
 

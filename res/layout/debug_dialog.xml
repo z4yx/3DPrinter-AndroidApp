@@ -20,132 +20,160 @@
         android:text="加号表示正方向（远离限位开关）移动，减号表示负方向移动，数值为单位位移量。"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/dbg_x_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="X-" />
+
+                <EditText
+                    android:id="@+id/dbg_x_val"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:text="10" >
+
+                    <requestFocus />
+                </EditText>
+
+                <Button
+                    android:id="@+id/dbg_x_p"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="X+" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/dbg_y_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Y-" />
+
+                <EditText
+                    android:id="@+id/dbg_y_val"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:text="10" >
+
+                    <requestFocus />
+                </EditText>
+
+                <Button
+                    android:id="@+id/dbg_y_p"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Y+" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/dbg_z_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Z-" />
+
+                <EditText
+                    android:id="@+id/dbg_z_val"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:text="10" >
+
+                    <requestFocus />
+                </EditText>
+
+                <Button
+                    android:id="@+id/dbg_z_p"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Z+" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/dbg_a_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="A-" />
+
+                <EditText
+                    android:id="@+id/dbg_a_val"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:text="10" >
+
+                    <requestFocus />
+                </EditText>
+
+                <Button
+                    android:id="@+id/dbg_a_p"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="A+" />
+            </TableRow>
+        </TableLayout>
+
+
     <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
 
         <Button
-            android:id="@+id/dbg_x_m"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X-" />
-
-        <EditText
-            android:id="@+id/dbg_x_val"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="6"
-            android:ems="10"
-            android:inputType="numberSigned"
-            android:text="10" >
-
-            <requestFocus />
-        </EditText>
+            android:text="XY Home"
+            android:id="@+id/dbg_xy_home"
+            android:layout_weight="1" />
 
         <Button
-            android:id="@+id/dbg_x_p"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X+" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/dbg_y_m"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Y-" />
-
-        <EditText
-            android:id="@+id/dbg_y_val"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="6"
-            android:ems="10"
-            android:inputType="numberSigned"
-            android:text="10" >
-
-            <requestFocus />
-        </EditText>
-
-        <Button
-            android:id="@+id/dbg_y_p"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Y+" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/dbg_z_m"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Z-" />
-
-        <EditText
-            android:id="@+id/dbg_z_val"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="6"
-            android:ems="10"
-            android:inputType="numberSigned"
-            android:text="10" >
-
-            <requestFocus />
-        </EditText>
-
-        <Button
-            android:id="@+id/dbg_z_p"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Z+" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/dbg_a_m"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="A-" />
-
-        <EditText
-            android:id="@+id/dbg_a_val"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="6"
-            android:ems="10"
-            android:inputType="numberSigned"
-            android:text="10" >
-
-            <requestFocus />
-        </EditText>
-
-        <Button
-            android:id="@+id/dbg_a_p"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="A+" />
-
+            android:text="Z Home"
+            android:id="@+id/dbg_z_home"
+            android:layout_weight="1" />
     </LinearLayout>
 
-    
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
