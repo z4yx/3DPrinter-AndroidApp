@@ -162,8 +162,14 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="XY Home"
-            android:id="@+id/dbg_xy_home"
+            android:text="X Home"
+            android:id="@+id/dbg_x_home"
+            android:layout_weight="1" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y Home"
+            android:id="@+id/dbg_y_home"
             android:layout_weight="1" />
 
         <Button

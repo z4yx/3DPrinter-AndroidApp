@@ -157,6 +157,13 @@ public class BluetoothChat extends Activity implements OnClickListener, Bluetoot
 				
 			}
 		}, 500, 1600);
+
+        findViewById(R.id.menuButton).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BluetoothChat.this.openOptionsMenu();
+            }
+        });
     }
 
     @Override

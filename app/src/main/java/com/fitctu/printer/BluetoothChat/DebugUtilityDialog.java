@@ -47,7 +47,8 @@ public class DebugUtilityDialog extends Dialog implements android.view.View.OnCl
 		findViewById(R.id.dbg_z_p).setOnClickListener(this);
 		findViewById(R.id.dbg_a_m).setOnClickListener(this);
 		findViewById(R.id.dbg_a_p).setOnClickListener(this);
-		findViewById(R.id.dbg_xy_home).setOnClickListener(this);
+		findViewById(R.id.dbg_x_home).setOnClickListener(this);
+		findViewById(R.id.dbg_y_home).setOnClickListener(this);
 		findViewById(R.id.dbg_z_home).setOnClickListener(this);
 
 		mXValText = (EditText)findViewById(R.id.dbg_x_val);
@@ -73,9 +74,9 @@ public class DebugUtilityDialog extends Dialog implements android.view.View.OnCl
 	public void onClick(View arg0) {
 		int id = arg0.getId();
 		try{
-			if(id == R.id.dbg_xy_home || id == R.id.dbg_z_home){
-				mBluetoothIface.sendMessage(mBluetoothIface.buildMessage("HOME",
-						id == R.id.dbg_z_home ? "Z" : "XY"));
+			if(id == R.id.dbg_x_home || id == R.id.dbg_y_home || id == R.id.dbg_z_home){
+				String ax = (id == R.id.dbg_z_home ? "Z" : (id == R.id.dbg_x_home ? "X" : "Y"));
+				mBluetoothIface.sendMessage(mBluetoothIface.buildMessage("HOME", ax));
 				return;
 			}
 			int sign = 1, val = 0;

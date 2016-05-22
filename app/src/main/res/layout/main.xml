@@ -159,11 +159,24 @@
 
     </RelativeLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="菜单"
+            android:id="@+id/menuButton" />
+    </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="© 2014 清华大学基础工业训练中心"
+        android:text="© 2014-2016 清华大学基础工业训练中心"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </LinearLayout>
